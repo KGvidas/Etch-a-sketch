@@ -44,29 +44,53 @@
   #root, #__next {
     isolation: isolate;
   }
-
-
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 header {
     text-align: center;
     font-size: 32px;
 }
  main {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex:1;
+    flex-wrap: wrap;
+    gap: 10%;
+    margin-bottom: 10px;
  }
 .containerButtons {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: 3px solid grey;
+    background-color: grey;
+    padding: 10px;
 
 }
+button {
+    padding: 25px;
+    border-radius: 12px;
+    background-color: #393e46;
+    color: #ddd;
+    font-size: 24px;
+}
+button:hover {
+    background-color: #4a4f57;
+    transform: scale(1.1);
+}
+
 .containerGrid {
     width: 600px;
     height: 600px;
-    border: 3px solid red;
+    border: 3px solid black;
 }
 footer {
-    padding-top: 15px;
+    padding:5px;
+    font-size: 20px;
+    color: #ddd;
+    background-color: grey;
     text-align: center;
-}
+    margin-bottom: auto;  
+  }
