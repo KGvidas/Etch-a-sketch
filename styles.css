@@ -92,7 +92,15 @@ button:hover {
     height: 550px;
     border: 3px solid black;
     box-shadow: 10px 10px 25px 10px grey;
+    display: flex;
 }
+.containerGrid div {
+background-color: #04AA6D;
+flex-direction: column;
+flex: 1;
+flex-wrap: wrap;
+}
+
 #slidecontainer {
     display: flex;
     flex-direction: column;
