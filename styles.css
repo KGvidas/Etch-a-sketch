@@ -100,10 +100,10 @@ button:hover {
 .addedDiv {
 background-color: #04AA6D;
 border: 2px solid rebeccapurple;
-/* box-sizing: border-box;
+box-sizing: border-box;
 flex: 1;
 flex-wrap: wrap;
-flex-direction: column; */
+flex-direction: column;
 }
 
 #slidecontainer {
