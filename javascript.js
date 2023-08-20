@@ -26,7 +26,6 @@ function checkForDefaultGrid(oneNumberValue){
     if (oneNumberValue === "1" ) {
         let div = document.createElement('div');
         div.classList.add('addedDiv');
-        div.textContent = "hello";
         containerGrid.appendChild(div);
     } else {
         createGrid(oneNumberValue);
@@ -37,11 +36,20 @@ function createGrid(oneNumberValue) {
     for (let i = 0; i < (oneNumberValue  ** 2); i++){
         let div = document.createElement('div');
         div.classList.add('addedDiv');
-        div.textContent = "hello";
         containerGrid.appendChild(div);
     }
+    let addedDiv = document.querySelectorAll('.addedDiv');
+    adjustWidthHeight (oneNumberValue, addedDiv)
 };
 
+function adjustWidthHeight (oneNumberValue, addedDiv) {
+    let adjustedValue = (550 / oneNumberValue);
+
+    addedDiv.forEach(div => {
+        div.style.minWidth = adjustedValue + 'px';
+        div.style.minHeight = adjustedValue + 'px';
+    });
+};
 
 
 // toggle shading
