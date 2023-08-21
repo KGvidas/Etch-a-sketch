@@ -9,8 +9,8 @@ input.addEventListener("input", (event) => {
 
     resetGrid()
    
-    let oneNumberValue = event.target.value;
-    checkForDefaultGrid(oneNumberValue);
+    let inputValue = event.target.value;
+    checkForDefaultGrid(inputValue);
 });
 // RANGE SLIDER  END
 
@@ -24,28 +24,28 @@ function resetGrid(){
 
 let containerGrid = document.querySelector('.containerGrid')
 
-function checkForDefaultGrid(oneNumberValue){
-    if (oneNumberValue === "1" ) {
+function checkForDefaultGrid(inputValue){
+    if (inputValue === "1" ) {
         let div = document.createElement('div');
         div.classList.add('addedDiv');
         containerGrid.appendChild(div);
     } else {
-        createGrid(oneNumberValue);
+        createGrid(inputValue);
     }
-}
+};
 
-function createGrid(oneNumberValue) {
-    for (let i = 0; i < (oneNumberValue  ** 2); i++){
+function createGrid(inputValue) {
+    for (let i = 0; i < (inputValue  ** 2); i++){
         let div = document.createElement('div');
         div.classList.add('addedDiv');
         containerGrid.appendChild(div);
     }
     let addedDiv = document.querySelectorAll('.addedDiv');
-    adjustWidthHeight (oneNumberValue, addedDiv)
+    adjustWidthHeight (inputValue, addedDiv)
 };
 
-function adjustWidthHeight (oneNumberValue, addedDiv) {
-    let adjustedValue = (550 / oneNumberValue);
+function adjustWidthHeight (inputValue, addedDiv) {
+    let adjustedValue = (550 / inputValue);
 
     addedDiv.forEach(div => {
         div.style.minWidth = adjustedValue + 'px';
