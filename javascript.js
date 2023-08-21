@@ -36,7 +36,6 @@ function createGrid(oneNumberValue) {
     for (let i = 0; i < (oneNumberValue  ** 2); i++){
         let div = document.createElement('div');
         div.classList.add('addedDiv');
-        console.log(i);
         containerGrid.appendChild(div);
     }
     let addedDiv = document.querySelectorAll('.addedDiv');
