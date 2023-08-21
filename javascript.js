@@ -5,11 +5,9 @@ let input = document.getElementById('myRange');
 
 
 input.addEventListener("input", (event) => {
-    value.textContent = event.target.value + " x " + event.target.value;
-
-    resetGrid()
-   
     let inputValue = event.target.value;
+    updateValueContainer(inputValue);
+    resetGrid();
     checkForDefaultGrid(inputValue);
 });
 // RANGE SLIDER  END
@@ -53,6 +51,9 @@ function adjustWidthHeight (inputValue, addedDiv) {
     });
 };
 
+function updateValueContainer(inputValue){
+    value.textContent = inputValue + " x " + inputValue;
+};
 // MAKING GRID FUNCTIONS END
 
 // toggle shading
