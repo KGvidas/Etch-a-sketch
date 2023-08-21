@@ -97,8 +97,8 @@ button:hover {
 
 /* JS FUNCTION ADDED DIVS */
 .addedDiv {
-background-color: #04AA6D;
-border: 2px solid rebeccapurple;
+background-color: white;
+border: 1px solid darkgray;
 box-sizing: border-box;
 flex: 1;
 flex-wrap: wrap;
