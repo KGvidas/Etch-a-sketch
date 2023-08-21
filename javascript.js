@@ -1,26 +1,23 @@
-// RANGE SLIDER 
-
 let value = document.querySelector('.valuecontainer');
 let input = document.getElementById('myRange');
+let containerGrid = document.querySelector('.containerGrid')
 
-
+// RANGE SLIDER;
 input.addEventListener("input", (event) => {
     let inputValue = event.target.value;
     updateValueContainer(inputValue);
     resetGrid();
     checkForDefaultGrid(inputValue);
 });
-// RANGE SLIDER  END
+// RANGE SLIDER  END;
 
 
 
-// MAKING GRID FUNCTIONS
+// ALL GRID RELATED FUNCTIONS;
 function resetGrid(){
     const removeDivs = document.querySelectorAll('.addedDiv');
      removeDivs.forEach(div => div.remove());
 };
-
-let containerGrid = document.querySelector('.containerGrid')
 
 function checkForDefaultGrid(inputValue){
     if (inputValue === "1" ) {
@@ -54,7 +51,8 @@ function adjustWidthHeight (inputValue, addedDiv) {
 function updateValueContainer(inputValue){
     value.textContent = inputValue + " x " + inputValue;
 };
-// MAKING GRID FUNCTIONS END
+
+// ALL GRID RELATED END;
 
 // toggle shading
 // toggle lightnen
