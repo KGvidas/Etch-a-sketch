@@ -25,7 +25,16 @@ function createGrid(inputValue) {
     }
     let addedDiv = document.querySelectorAll('.addedDiv');
     adjustWidthHeight (inputValue, addedDiv)
-};
+    
+
+    addedDiv.forEach((added) => {
+        added.addEventListener("mouseover", (event) => {
+            console.log("Mouseover event triggered"); // Log to see if the event is triggered
+            event.target.style.backgroundColor = "black";
+            console.log(event.target);
+        });
+    });
+}
 
 function adjustWidthHeight (inputValue, addedDiv) {
     let adjustedValue = (550 / inputValue);
@@ -42,12 +51,6 @@ function updateValueContainer(inputValue){
 
 // ALL GRID RELATED END;
 
-
-// let addedDivs = document.querySelectorAll('.addedDiv');
-// addedDivs.forEach((added) => {
-//     added.addEventListener("mouseover", (event) => {
-//         event.target.style.color = "purple";})
-// });
 
 // toggle shading
 // toggle lightnen
