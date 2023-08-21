@@ -23,15 +23,13 @@ function createGrid(inputValue) {
         div.classList.add('addedDiv');
         containerGrid.appendChild(div);
     }
+    
     let addedDiv = document.querySelectorAll('.addedDiv');
     adjustWidthHeight (inputValue, addedDiv)
     
-
     addedDiv.forEach((added) => {
         added.addEventListener("mouseover", (event) => {
-            console.log("Mouseover event triggered"); // Log to see if the event is triggered
             event.target.style.backgroundColor = "black";
-            console.log(event.target);
         });
     });
 }
