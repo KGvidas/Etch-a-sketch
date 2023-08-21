@@ -10,11 +10,13 @@ input.addEventListener("input", (event) => {
     resetGrid()
    
     let oneNumberValue = event.target.value;
-    // console.log(oneNumberValue);
     checkForDefaultGrid(oneNumberValue);
 });
 // RANGE SLIDER  END
 
+
+
+// MAKING GRID FUNCTIONS
 function resetGrid(){
     const removeDivs = document.querySelectorAll('.addedDiv');
      removeDivs.forEach(div => div.remove());
@@ -51,6 +53,7 @@ function adjustWidthHeight (oneNumberValue, addedDiv) {
     });
 };
 
+// MAKING GRID FUNCTIONS END
 
 // toggle shading
 // toggle lightnen
