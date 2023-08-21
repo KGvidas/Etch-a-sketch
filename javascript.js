@@ -7,26 +7,14 @@ input.addEventListener("input", (event) => {
     let inputValue = event.target.value;
     updateValueContainer(inputValue);
     resetGrid();
-    checkForDefaultGrid(inputValue);
+    createGrid(inputValue);
 });
 // RANGE SLIDER  END;
-
-
 
 // ALL GRID RELATED FUNCTIONS;
 function resetGrid(){
     const removeDivs = document.querySelectorAll('.addedDiv');
      removeDivs.forEach(div => div.remove());
-};
-
-function checkForDefaultGrid(inputValue){
-    if (inputValue === "1" ) {
-        let div = document.createElement('div');
-        div.classList.add('addedDiv');
-        containerGrid.appendChild(div);
-    } else {
-        createGrid(inputValue);
-    }
 };
 
 function createGrid(inputValue) {
@@ -53,6 +41,13 @@ function updateValueContainer(inputValue){
 };
 
 // ALL GRID RELATED END;
+
+
+// let addedDivs = document.querySelectorAll('.addedDiv');
+// addedDivs.forEach((added) => {
+//     added.addEventListener("mouseover", (event) => {
+//         event.target.style.color = "purple";})
+// });
 
 // toggle shading
 // toggle lightnen
