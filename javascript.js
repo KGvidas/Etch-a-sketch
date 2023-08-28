@@ -1,6 +1,7 @@
 let value = document.querySelector('.valuecontainer');
 let input = document.getElementById('myRange');
-let containerGrid = document.querySelector('.containerGrid')
+let containerGrid = document.querySelector('.containerGrid');
+let addedDiv;
 
 // RANGE SLIDER;
 input.addEventListener("input", (event) => {
@@ -26,13 +27,19 @@ function createGrid(inputValue) {
     
     let addedDiv = document.querySelectorAll('.addedDiv');
     adjustWidthHeight (inputValue, addedDiv)
-    
-    addedDiv.forEach((added) => {
-        added.addEventListener("mouseover", (event) => {
-            event.target.style.backgroundColor = "black";
-        });
-    });
-}
+};
+
+// event delegation
+
+containerGrid.addEventListener("mouseover", (event) => {
+    if (event.target.classList.contains("addedDiv")) {
+        console.log('abc');
+        event.target.style.backgroundColor = "black";
+    }
+});
+
+ 
+
 
 function adjustWidthHeight (inputValue, addedDiv) {
     let adjustedValue = (550 / inputValue);
@@ -46,9 +53,13 @@ function adjustWidthHeight (inputValue, addedDiv) {
 function updateValueContainer(inputValue){
     value.textContent = inputValue + " x " + inputValue;
 };
-
 // ALL GRID RELATED END;
 
+
+
+// FIX DEFAULT GRID WHEN REFRESHED PAGE
+//hover effect only the
+// MINISE SOME LINES IN THE CREATE GRID FUNCTION FOR BETTER READIBILTY
 
 // toggle shading
 // toggle lightnen
