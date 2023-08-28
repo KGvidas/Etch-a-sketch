@@ -10,6 +10,10 @@ input.addEventListener("input", (event) => {
     resetGrid();
     createGrid(inputValue);
 });
+
+function updateValueContainer(inputValue){
+    value.textContent = inputValue + " x " + inputValue;
+};
 // RANGE SLIDER  END;
 
 // ALL GRID RELATED FUNCTIONS;
@@ -24,22 +28,9 @@ function createGrid(inputValue) {
         div.classList.add('addedDiv');
         containerGrid.appendChild(div);
     }
-    
-    let addedDiv = document.querySelectorAll('.addedDiv');
+    addedDiv = document.querySelectorAll('.addedDiv');
     adjustWidthHeight (inputValue, addedDiv)
 };
-
-// event delegation
-
-containerGrid.addEventListener("mouseover", (event) => {
-    if (event.target.classList.contains("addedDiv")) {
-        console.log('abc');
-        event.target.style.backgroundColor = "black";
-    }
-});
-
- 
-
 
 function adjustWidthHeight (inputValue, addedDiv) {
     let adjustedValue = (550 / inputValue);
@@ -49,11 +40,39 @@ function adjustWidthHeight (inputValue, addedDiv) {
         div.style.minHeight = adjustedValue + 'px';
     });
 };
-
-function updateValueContainer(inputValue){
-    value.textContent = inputValue + " x " + inputValue;
-};
 // ALL GRID RELATED END;
+
+// event delegation for mouseover 
+
+containerGrid.addEventListener("mouseover", (event) => {
+    if (event.target.classList.contains("addedDiv")) {
+        event.target.style.backgroundColor = "black";
+    }
+});
+
+
+let bckgrndColour = document.getElementById('favcolor');
+
+bckgrndColour.addEventListener('input', changeBackgroundColour);
+
+
+
+//  function changeBackgroundColour () {
+//     console.log(favcolor.value); // Do something
+//     let newColor = favcolor.value;
+//     console.log(addedDiv);
+//     addedDiv.style.backgroundColor = newColor;
+//  }
+
+function changeBackgroundColour() {
+    console.log(bckgrndColour.value); // Use bckgrndColour instead of favcolor
+    let newColor = bckgrndColour.value;
+    console.log(addedDiv);
+    addedDiv.forEach(div => {
+        div.style.backgroundColor = newColor;
+    });
+}
+
 
 
 
