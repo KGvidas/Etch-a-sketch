@@ -2,6 +2,7 @@ let value = document.querySelector('.valuecontainer');
 let input = document.getElementById('myRange');
 let containerGrid = document.querySelector('.containerGrid');
 let addedDiv;
+let newColor;
 
 // RANGE SLIDER;
 input.addEventListener("input", (event) => {
@@ -17,10 +18,10 @@ function updateValueContainer(inputValue){
 // RANGE SLIDER  END;
 
 // ALL GRID RELATED FUNCTIONS;
-function resetGrid(){
+function resetGrid() {
     const removeDivs = document.querySelectorAll('.addedDiv');
-     removeDivs.forEach(div => div.remove());
-};
+    removeDivs.forEach(div => div.remove());
+}
 
 function createGrid(inputValue) {
     for (let i = 0; i < (inputValue  ** 2); i++){
@@ -30,6 +31,7 @@ function createGrid(inputValue) {
     }
     addedDiv = document.querySelectorAll('.addedDiv');
     adjustWidthHeight (inputValue, addedDiv)
+    changeBackgroundColour(newColor, addedDiv)
 };
 
 function adjustWidthHeight (inputValue, addedDiv) {
@@ -51,27 +53,27 @@ containerGrid.addEventListener("mouseover", (event) => {
 });
 
 
-let bckgrndColour = document.getElementById('favcolor');
+let bckgrndColour = document.getElementById('bckgrndColour');
 
-bckgrndColour.addEventListener('input', changeBackgroundColour);
+bckgrndColour.addEventListener('input', () => {
+    changeBackgroundColour(newColor, addedDiv);
+});
 
-
-
-//  function changeBackgroundColour () {
-//     console.log(favcolor.value); // Do something
-//     let newColor = favcolor.value;
-//     console.log(addedDiv);
-//     addedDiv.style.backgroundColor = newColor;
-//  }
-
-function changeBackgroundColour() {
-    console.log(bckgrndColour.value); // Use bckgrndColour instead of favcolor
-    let newColor = bckgrndColour.value;
-    console.log(addedDiv);
+function changeBackgroundColour(newColor, addedDiv) {
+    newColor = bckgrndColour.value;
     addedDiv.forEach(div => {
         div.style.backgroundColor = newColor;
     });
 }
+
+// bckgrndColour.addEventListener('input', changeBackgroundColour);
+
+// function changeBackgroundColour() { 
+//     newColor = bckgrndColour.value;
+//     addedDiv.forEach(div => {
+//         div.style.backgroundColor = newColor;
+//     });
+// }
 
 
 
