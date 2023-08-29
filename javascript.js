@@ -3,6 +3,7 @@ let input = document.getElementById('myRange');
 let containerGrid = document.querySelector('.containerGrid');
 let addedDiv;
 let newColor;
+let newPenColor;
 let defaultDiv = document.getElementById('default');
 
 // RANGE SLIDER;
@@ -49,7 +50,11 @@ function adjustWidthHeight (inputValue, addedDiv) {
 
 containerGrid.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("addedDiv")) {
-        event.target.style.backgroundColor = "black";
+        if (PenColour.value === "#000000") {
+            event.target.style.backgroundColor = "black";
+        } else {
+            event.target.style.backgroundColor = newPenColor;
+        }
     }
 });
 
@@ -73,12 +78,17 @@ function changeBackgroundColour(newColor, addedDiv) {
 // BACKGROUND COLOR CHANGE FUNCTIONS END
 
 
+// PEN COLOUR CHANGE 
+let PenColour = document.getElementById('PnColour');
+
+PenColour.addEventListener('input', () => {
+    newPenColor = PenColour.value;
+});
 
 
+// PEN COLOUR CHANGE END
 
-// FIX DEFAULT GRID WHEN REFRESHED PAGE
-//hover effect only the
-// MINISE SOME LINES IN THE CREATE GRID FUNCTION FOR BETTER READIBILTY
+
 
 // toggle shading
 // toggle lightnen
