@@ -3,6 +3,7 @@ let input = document.getElementById('myRange');
 let containerGrid = document.querySelector('.containerGrid');
 let addedDiv;
 let newColor;
+let defaultDiv = document.getElementById('default');
 
 // RANGE SLIDER;
 input.addEventListener("input", (event) => {
@@ -52,7 +53,7 @@ containerGrid.addEventListener("mouseover", (event) => {
     }
 });
 
-
+// BACKGROUND COLOR CHANGE FUNCTIONS 
 let bckgrndColour = document.getElementById('bckgrndColour');
 
 bckgrndColour.addEventListener('input', () => {
@@ -61,19 +62,16 @@ bckgrndColour.addEventListener('input', () => {
 
 function changeBackgroundColour(newColor, addedDiv) {
     newColor = bckgrndColour.value;
+   
+    if (addedDiv){
     addedDiv.forEach(div => {
         div.style.backgroundColor = newColor;
     });
-}
+} else {
+    defaultDiv.style.backgroundColor = newColor;
+}};
+// BACKGROUND COLOR CHANGE FUNCTIONS END
 
-// bckgrndColour.addEventListener('input', changeBackgroundColour);
-
-// function changeBackgroundColour() { 
-//     newColor = bckgrndColour.value;
-//     addedDiv.forEach(div => {
-//         div.style.backgroundColor = newColor;
-//     });
-// }
 
 
 
