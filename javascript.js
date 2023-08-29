@@ -3,7 +3,7 @@ let input = document.getElementById('myRange');
 let containerGrid = document.querySelector('.containerGrid');
 let addedDiv;
 let newColor;
-let newPenColor;
+let PenColor = '#000000';
 let defaultDiv = document.getElementById('default');
 
 // RANGE SLIDER;
@@ -50,10 +50,15 @@ function adjustWidthHeight (inputValue, addedDiv) {
 
 containerGrid.addEventListener("mouseover", (event) => {
     if (event.target.classList.contains("addedDiv")) {
-        if (PenColour.value === "#000000") {
+        if (PenColor === "#000000") {
             event.target.style.backgroundColor = "black";
+        } else if (PenColor === 'rainbow') {
+            const randomR = Math.floor(Math.random() * 256);
+            const randomG = Math.floor(Math.random() * 256);
+            const randomB = Math.floor(Math.random() * 256);
+            event.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
         } else {
-            event.target.style.backgroundColor = newPenColor;
+            event.target.style.backgroundColor = PenColor;
         }
     }
 });
@@ -82,11 +87,17 @@ function changeBackgroundColour(newColor, addedDiv) {
 let PenColour = document.getElementById('PnColour');
 
 PenColour.addEventListener('input', () => {
-    newPenColor = PenColour.value;
+    PenColor = PenColour.value;
+});
+// PEN COLOUR CHANGE END
+
+//Rainbow mode
+let rainbowColor = document.getElementById('RainbowMode');
+
+rainbowColor.addEventListener('click', () => {
+    PenColor = 'rainbow'; // You can use any unique value to represent rainbow
 });
 
-
-// PEN COLOUR CHANGE END
 
 
 
