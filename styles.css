@@ -94,6 +94,11 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
 }
+#PenColour {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 #BackgroundColour {
   display: flex;
   justify-content: space-between;
