@@ -94,6 +94,31 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
 }
+#BackgroundColour {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* HTML5 Color Input  */
+.Colour {
+  -webkit-appearance: none;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+}
+.Colour::-webkit-color-swatch {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+}
+.Colour::-webkit-color-swatch-wrapper {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+}
+/* HTML5 Color Input  END */
 
 /* JS FUNCTION ADDED DIVS */
 .addedDiv {
