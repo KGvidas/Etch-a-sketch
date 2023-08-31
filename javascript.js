@@ -2,7 +2,7 @@ let value = document.querySelector('.valuecontainer');
 let input = document.getElementById('myRange');
 let containerGrid = document.querySelector('.containerGrid');
 let addedDiv;
-let newColor;
+let newColor = 'white';
 let PenColor = '#000000';
 let defaultDiv = document.getElementById('default');
 
@@ -57,7 +57,11 @@ containerGrid.addEventListener("mouseover", (event) => {
             const randomG = Math.floor(Math.random() * 256);
             const randomB = Math.floor(Math.random() * 256);
             event.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
-        } else {
+        } else if (PenColor === 'Eraser'){
+            event.target.style.backgroundColor = newColor;
+            console.log(newColor);
+        }
+        else {
             event.target.style.backgroundColor = PenColor;
         }
     }
@@ -68,6 +72,7 @@ let bckgrndColour = document.getElementById('bckgrndColour');
 
 bckgrndColour.addEventListener('input', () => {
     changeBackgroundColour(newColor, addedDiv);
+    newColor = bckgrndColour.value;
 });
 
 function changeBackgroundColour(newColor, addedDiv) {
@@ -95,8 +100,15 @@ PenColour.addEventListener('input', () => {
 let rainbowColor = document.getElementById('RainbowMode');
 
 rainbowColor.addEventListener('click', () => {
-    PenColor = 'rainbow'; // You can use any unique value to represent rainbow
+    PenColor = 'rainbow';  
 });
+
+let EraserColor = document.getElementById('Eraser');
+
+EraserColor.addEventListener('click', () => {
+    PenColor = 'Eraser';
+});
+
 
 
 
