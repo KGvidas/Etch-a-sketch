@@ -116,5 +116,14 @@ clearMode.addEventListener('click',  () => {
     changeBackgroundColour(newColor, addedDiv);
 });
 
+// Grid LINES
+let GridLines = document.getElementById('GridLines');
+
+GridLines.addEventListener('click', () => {
+    addedDiv.forEach(div => {
+        div.style.border = "none";
+    });
+});
+
 // toggle shading
 // toggle lightnen
