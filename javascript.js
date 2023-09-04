@@ -109,9 +109,12 @@ EraserColor.addEventListener('click', () => {
     PenColor = 'Eraser';
 });
 
+// Clear MODE
+let clearMode = document.getElementById('Clear');
 
-
-
+clearMode.addEventListener('click',  () => {
+    changeBackgroundColour(newColor, addedDiv);
+});
 
 // toggle shading
 // toggle lightnen
