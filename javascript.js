@@ -125,5 +125,11 @@ GridLines.addEventListener('click', () => {
     });
 });
 
-// toggle shading
-// toggle lightnen
+// THIS MAKES BUTTON AUTOMATICLY OPEN INPUT CHANGER
+ function openColorPicker() {
+    PenColour.click();
+  }
+  // SAME FOR BACKGROUND
+  function openBackground(){
+    bckgrndColour.click();
+  }
