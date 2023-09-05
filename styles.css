@@ -85,6 +85,10 @@ button:hover {
     background-color: #4a4f57;
     transform: scale(1.1);
 }
+.active {
+  background-color: #4a4f57;
+    transform: scale(1.1);
+}
 
 .containerGrid {
     width: 550px;
